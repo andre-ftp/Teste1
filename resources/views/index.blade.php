@@ -12,8 +12,8 @@
     <div class="container mx-auto text-center">
         <h1 class="font-bold">Lista</h1>
         <ul>
-            <li><a href="/1">Nº Artigo -> 1</a></li>
-            <li><a href="/2">Nº Artigo -> 2</a></li>
+            <li><a href="/1">Artigo -> 1</a></li>
+            <li><a href="/2">Artigo -> 2</a></li>
         </ul>
     </div>
 </body>

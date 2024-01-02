@@ -21,22 +21,21 @@ Route::get('/{post}', function ($post) {
 
     $caminho=__DIR__ . "/../resources/posts/{$post}.html";
 
-
     if(! file_exists($caminho))
     {
         dd('Não Existe!!!');
     }
 
+    $ligacao = cache()->remember("posts.{$slug}", now()->addMinutes(5), function () use ($caminho){
+        
+        return file_get_contents($caminho);
 
-
-    $ligacao = file_get_contents($caminho);
-
-
-
-
+    });
+        
     return view('show',[
         'post' => $post,
         'nome' => 'Artigo',
         'texto' => $ligacao
     ]);
+
 })->where('post', '[0-9]');

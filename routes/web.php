@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Post;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,28 +15,43 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('index');
+    
+    //return Post::find(2);
+    
+    return view('index',[
+        'nome'=>'Artigo'
+    ]);
+    
 });
 
-Route::get('/{post}', function ($post) {
+Route::get('/{post}', function ($slug) {
 
-    $caminho=__DIR__ . "/../resources/posts/{$post}.html";
+    return view('show',[
+        'numero' => $slug,
+        'nome' => 'Artigo',
+        'post' => Post::find($slug)
+    ]);
+
+
+    /*
+    $caminho=__DIR__ . "/../resources/posts/{$slug}.html";
 
     if(! file_exists($caminho))
     {
         dd('Não Existe!!!');
     }
 
-    $ligacao = cache()->remember("posts.{$slug}", now()->addMinutes(5), function () use ($caminho){
+    $post = cache()->remember("posts.{$slug}", now()->addMinutes(5), function () use ($caminho){
         
         return file_get_contents($caminho);
 
     });
         
     return view('show',[
-        'post' => $post,
+        'numero' => $slug,
         'nome' => 'Artigo',
-        'texto' => $ligacao
+        'post' => $post
     ]);
+    */
 
-})->where('post', '[0-9]');
+})->where('slug', '[0-9]');

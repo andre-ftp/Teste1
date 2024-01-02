@@ -8,8 +8,8 @@
 </head>
 <body class="py-4 px-2">
     <article>
-        <h1 class="text-xl font-bold">{{$nome}}: {{$post}}</h1>
-        <div class="py-8"><?= $texto ?></div>
+        <h1 class="text-xl font-bold">{{$nome}}: {{$numero}}</h1>
+        <div class="py-8">{!! $post !!}</div>
     </article>
 
     <a href="/">Go Back</a>

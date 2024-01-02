@@ -4,7 +4,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\ModelNotFoundException;
-use Illuminate\Support\Facade\File;
+use Illuminate\Support\Facades\File;
 
 class Post{
 

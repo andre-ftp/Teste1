@@ -12,11 +12,11 @@
     <div class="container mx-auto text-center">
         <h1 class="font-bold">Lista</h1>
         
-        <?php foreach($posts as $post) ?>
+        <?php foreach($posts as $post) : ?>
             <article>
                 <?= $post ?>
             </article>
-        <?php endforeach ?>
+        <?php endforeach; ?>
 
         <!--
         <ul>

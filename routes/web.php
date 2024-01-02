@@ -2,6 +2,7 @@
 
 use App\Models\Post;
 use Illuminate\Support\Facades\Route;
+use Spatie\YamlFrontMatter\YamlFrontMatter;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,10 +18,21 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     //return Post::find(2);
 
+    $document = YamlFrontMatter::parseFile(
+        resource_path('posts/1.html')
+    );
+   
+    ddd($document->title);
+   
+    $posts = Post::all();
+
+    //ddd($posts);
+/*
     return view('index',[
         'nome'=>'Artigo',
-        'posts'=>Post::all()
+        'posts'=>$posts
     ]);
+*/
     
 });
 

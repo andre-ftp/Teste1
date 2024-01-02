@@ -15,11 +15,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    
     //return Post::find(2);
-    
+
     return view('index',[
-        'nome'=>'Artigo'
+        'nome'=>'Artigo',
+        'posts'=>Post::all()
     ]);
     
 });

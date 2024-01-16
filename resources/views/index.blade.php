@@ -10,20 +10,16 @@
 
 <body>
     <div class="container mx-auto text-center">
-        <h1 class="font-bold">Lista</h1>
+        <h1 class="font-bold text-xl">Lista</h1>
         
         <?php foreach($posts as $post) : ?>
             <article>
-                <?= $post ?>
+                <h1 class="font-bold"><?= $post->titulo; ?></h1> <p class="text-sm"><?= $post->info; ?></p>
             </article>
+            <br>
         <?php endforeach; ?>
 
-        <!--
-        <ul>
-            <li><a href="/1">{{$nome}} -> 1</a></li>
-            <li><a href="/2">{{$nome}} -> 2</a></li>
-        </ul>
-        -->
+
     
     
     </div>

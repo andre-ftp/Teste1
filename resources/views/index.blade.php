@@ -11,10 +11,11 @@
 <body>
     <div class="container mx-auto text-center">
         <h1 class="font-bold text-xl">Lista</h1>
-        
+        <br>
         <?php foreach($posts as $post) : ?>
             <article>
-                <h1 class="font-bold"><?= $post->titulo; ?></h1> <p class="text-sm"><?= $post->info; ?></p>
+               <a href="/<?= $post->slug; ?>"><h1 class="font-bold"><?= $post->titulo; ?></h1></a>
+                <p class="text-sm"><?= $post->info; ?></p>
             </article>
             <br>
         <?php endforeach; ?>

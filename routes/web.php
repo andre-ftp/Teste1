@@ -35,7 +35,8 @@ Route::get('/', function () {
         $posts[] = new Post(
             $document->title,
             $document->info,
-            $document->body()
+            $document->body(),
+            $document->slug
         );
     }
 
